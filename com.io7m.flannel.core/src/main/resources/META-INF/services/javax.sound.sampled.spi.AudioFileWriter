@@ -1,3 +1,2 @@
 # FLAC write provider
-net.sourceforge.javaflacencoder.FLACFileWriter
-
+com.io7m.flannel.javaflacencoder.FLACFileWriter
