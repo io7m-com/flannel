@@ -1,7 +1,8 @@
-/.idea/
-/.gradle/
-/build/
-/build/classes/java/main/
-/build/classes/java/test/
-
-/src/test/resources/
+*.iml
+.idea
+.jqwik-database
+.nra.cache
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+pom.xml.versionsBackup
+target
