@@ -260,21 +260,7 @@ public class FlacFormatConversionProvider extends FormatConversionProvider
       final AudioFormat[] formats = {
         new AudioFormat(
           sourceFormat.getSampleRate(),
-          8,
-          sourceFormat.getChannels(),
-          true,
-          false
-        ),
-        new AudioFormat(
-          sourceFormat.getSampleRate(),
-          16,
-          sourceFormat.getChannels(),
-          true,
-          false
-        ),
-        new AudioFormat(
-          sourceFormat.getSampleRate(),
-          24,
+          sourceFormat.getSampleSizeInBits(),
           sourceFormat.getChannels(),
           true,
           false
