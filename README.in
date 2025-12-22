@@ -1,0 +1,36 @@
+
+## flannel
+
+This `flannel` package is a port of the Free Lossless Audio Codec (FLAC)
+decoder to Java and a FLAC encoder implemented in Java.
+
+It is derived from:
+
+  * [JustFLAC](https://github.com/drogatkin/JustFLAC)
+  * [JavaFlacEncoder](https://github.com/amplexus/java-flac-encoder).
+
+## Building
+
+```
+$ mvn clean package
+```
+
+## Usage
+
+The package does not expose an API. It exposes `javax.sound` SPI providers.
+Specifically, it provides:
+
+* `javax.sound.sampled.spi.AudioFileReader`
+* `javax.sound.sampled.spi.AudioFileWriter`
+* `javax.sound.sampled.spi.FormatConversionProvider`
+
+Simply use the standard Java `AudioSystem` class, and you should be able to
+open FLAC files.
+
+## Test Data
+
+The original libraries used an `fbodemo1.flac` file that, for some reason, no
+longer exists on GitHub. The test data has been replaced with a public
+domain audio file taken from:
+
+  https://freesound.org/people/nicpressley/sounds/770969/

@@ -24,7 +24,7 @@
   </modules>
 
   <properties>
-    <io7m.workID></io7m.workID>
+    <io7m.workID>41685723-58ee-4b86-9c91-4edb504159fe</io7m.workID>
     <checkstyle.skip>true</checkstyle.skip>
 
     <!-- Configuration. -->
