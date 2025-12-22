@@ -12,6 +12,7 @@ package com.io7m.flannel.tests.jflac.test;
 
 import com.io7m.flannel.jflac.spi.FlacAudioFileReader;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -39,6 +40,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public final class FlacTest
 {
   private Path directory;
+
+  private static boolean runningOnCI()
+  {
+    return System.getenv("GITHUB_ACTIONS") != null;
+  }
 
   @BeforeEach
   public void setup()
@@ -133,6 +139,8 @@ public final class FlacTest
   public void convertFLACToPCMAndPlay16()
     throws UnsupportedAudioFileException, IOException, LineUnavailableException
   {
+    Assumptions.assumeFalse(runningOnCI());
+
     final File file = this.resourceOf(
       "gm_approx_16.flac").toFile();
     System.out.println("in file: " + file.getAbsolutePath());
@@ -166,6 +174,8 @@ public final class FlacTest
   public void convertFLACToPCMAndPlay24()
     throws UnsupportedAudioFileException, IOException, LineUnavailableException
   {
+    Assumptions.assumeFalse(runningOnCI());
+
     final File file = this.resourceOf(
       "gm_approx_24.flac").toFile();
     System.out.println("in file: " + file.getAbsolutePath());
